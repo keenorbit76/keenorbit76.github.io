@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑料吃瓜网红每日大赛入口-网红黑料吃瓜_每日大赛入口导航</title>
+<meta name="description" content="黑料吃瓜网红每日大赛入口聚合网红热点、黑料吃瓜话题与每日大赛入口导航，按板块梳理当日可见内容与访问路径，帮助读者快速找到想看的热点聚合区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315121f'/%3E%3Ccircle cx='24' cy='26' r='6' fill='%23ff5c8a'/%3E%3Ccircle cx='42' cy='34' r='6' fill='%23ffb347'/%3E%3Cpath d='M20 46c8 5 18 5 26-1' stroke='%23ff5c8a' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0f0c17;
+    --bg-soft:#171326;
+    --card:#1d1830;
+    --line:#2e2745;
+    --text:#ece8f6;
+    --muted:#a29bb8;
+    --pink:#ff5c8a;
+    --amber:#ffb347;
+    --mint:#6fe3c1;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 500px at 85% -10%,rgba(255,92,138,.18),transparent 60%),
+      radial-gradient(700px 420px at -10% 10%,rgba(111,227,193,.10),transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,12,23,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:12px 0;}
+  .logo{display:flex;align-items:center;gap:10px;min-width:0;}
+  .logo svg{flex:none;width:34px;height:34px;}
+  .logo b{
+    font-size:15px;font-weight:700;letter-spacing:.2px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .logo b em{font-style:normal;color:var(--pink);}
+  nav.main{display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    font-size:14px;color:var(--muted);padding:6px 11px;border-radius:999px;
+    border:1px solid transparent;transition:.2s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{color:var(--text);border-color:var(--line);background:var(--bg-soft);}
+  .nav-toggle{display:none;background:var(--bg-soft);border:1px solid var(--line);color:var(--text);
+    border-radius:10px;padding:7px 12px;font-size:14px;cursor:pointer;}
+
+  /* hero */
+  .hero{padding:52px 0 40px;}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:36px;align-items:center;}
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mint);
+    border:1px solid rgba(111,227,193,.35);background:rgba(111,227,193,.08);
+    padding:4px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .tag i{width:6px;height:6px;border-radius:50%;background:var(--mint);display:block;}
+  h1{
+    font-size:clamp(26px,4.4vw,46px);
+    line-height:1.25;margin:0 0 16px;letter-spacing:.5px;
+    background:linear-gradient(100deg,#fff 20%,#ffc0d2 55%,#ffb347 92%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{color:var(--muted);font-size:15.5px;margin:0 0 26px;max-width:34em;}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;
+    padding:11px 22px;border-radius:999px;transition:.2s;border:1px solid transparent;
+  }
+  .btn-main{background:linear-gradient(100deg,var(--pink),#ff8f6b);color:#1a0f1c;box-shadow:0 8px 26px rgba(255,92,138,.28);}
+  .btn-main:hover{transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:var(--bg-soft);}
+  .btn-ghost:hover{border-color:var(--pink);}
+  .btn[aria-disabled="true"]{opacity:.55;cursor:default;}
+
+  .hero-art{position:relative;}
+  .hero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 40px rgba(255,92,138,.18));}
+
+  /* sections */
+  section{padding:44px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px;flex-wrap:wrap;}
+  .sec-head h2{font-size:clamp(19px,2.4vw,24px);margin:0;letter-spacing:.4px;}
+  .sec-head h2 span{color:var(--amber);}
+  .sec-head p{margin:0;color:var(--muted);font-size:13.5px;}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:linear-gradient(160deg,var(--card),var(--bg-soft));
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;transition:.22s;position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(255,92,138,.45);}
+  .card .k{font-size:12px;letter-spacing:1px;color:var(--pink);font-weight:700;}
+  .card h3{font-size:16.5px;margin:8px 0 8px;}
+  .card p{margin:0;font-size:13.8px;color:var(--muted);line-height:1.7;}
+  .card .foot{margin-top:16px;font-size:12.5px;color:var(--mint);}
+
+  /* list */
+  .feed{display:grid;grid-template-columns:1.5fr .9fr;gap:26px;align-items:start;}
+  .list{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:8px 22px;}
+  .item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .item:last-child{border-bottom:none;}
+  .num{
+    flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    font-size:13.5px;font-weight:700;color:#1a0f1c;background:linear-gradient(140deg,var(--amber),#ffd08a);
+  }
+  .item h4{margin:0 0 5px;font-size:15.5px;}
+  .item p{margin:0;font-size:13.5px;color:var(--muted);}
+  .item .meta{font-size:12px;color:#7d768f;margin-top:6px;}
+
+  aside.side{display:flex;flex-direction:column;gap:18px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+  .panel h3{font-size:15px;margin:0 0 12px;color:var(--amber);}
+  .panel ul{margin:0;padding:0;list-style:none;font-size:13.6px;color:var(--muted);}
+  .panel ul li{padding:7px 0;border-bottom:1px dashed var(--line);}
+  .panel ul li:last-child{border-bottom:none;}
+  .panel ul li b{color:var(--text);font-weight:600;}
+  .search{display:flex;gap:8px;margin-top:4px;}
+  .search input{
+    flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;
+    color:var(--text);padding:9px 12px;font-size:13.5px;font-family:inherit;
+  }
+  .search input:focus{outline:none;border-color:var(--pink);}
+  .search button{
+    background:var(--pink);color:#1a0f1c;border:none;border-radius:10px;
+    padding:0 16px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;
+  }
+  .hint{font-size:12.3px;color:#8a839c;margin-top:10px;line-height:1.6;}
+
+  /* prose */
+  .prose{max-width:60em;color:#cdc7dd;font-size:14.6px;}
+  .prose h2{font-size:clamp(19px,2.3vw,23px);color:var(--text);margin:0 0 16px;}
+  .prose p{margin:0 0 14px;}
+  .prose strong{color:var(--amber);font-weight:600;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s;}
+  .step{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;position:relative;}
+  .step::before{
+    counter-increment:s;content:"0" counter(s);
+    font-size:26px;font-weight:800;color:rgba(255,92,138,.35);display:block;margin-bottom:8px;
+  }
+  .step h3{font-size:15.5px;margin:0 0 8px;}
+  .step p{margin:0;font-size:13.5px;color:var(--muted);}
+
+  .download-box{
+    margin-top:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    background:linear-gradient(100deg,rgba(255,92,138,.14),rgba(255,179,71,.10));
+    border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;flex-wrap:wrap;
+  }
+  .download-box div{font-size:13.8px;color:var(--muted);}
+  .download-box div b{display:block;color:var(--text);font-size:15.5px;margin-bottom:4px;}
+
+  footer.site{border-top:1px solid var(--line);padding:30px 0 40px;margin-top:20px;}
+  .foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13.2px;color:var(--muted);}
+  .foot-grid .brand{max-width:22em;}
+  .foot-grid .brand b{color:var(--text);display:block;margin-bottom:6px;font-size:14px;}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .foot-links a:hover{color:var(--pink);}
+  .copy{margin-top:22px;font-size:12.3px;color:#726b85;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{order:-1;max-width:340px;margin:0 auto;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .feed{grid-template-columns:1fr;}
+    .grid2{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .bar{flex-wrap:wrap;}
+    .nav-toggle{display:block;}
+    nav.main{display:none;width:100%;flex-direction:column;gap:2px;padding:8px 0 4px;}
+    nav.main.open{display:flex;}
+    nav.main a{padding:9px 12px;border-radius:8px;}
+    .hero{padding:34px 0 26px;}
+    .cards{grid-template-columns:1fr;}
+    section{padding:32px 0;}
+    .list{padding:4px 16px;}
+    .download-box{padding:18px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="黑料吃瓜网红每日大赛入口 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1d1830"/>
+        <circle cx="24" cy="26" r="6" fill="#ff5c8a"/>
+        <circle cx="42" cy="34" r="6" fill="#ffb347"/>
+        <path d="M20 46c8 5 18 5 26-1" stroke="#6fe3c1" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <b>黑料吃瓜网红每日大赛入口</b>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainnav">导航</button>
+    <nav class="main" id="mainnav" aria-label="主导航">
+      <a href="#today">今日看点</a>
+      <a href="#boards">吃瓜板块</a>
+      <a href="#feed">热榜速览</a>
+      <a href="#route">入口路径</a>
+      <a href="#notice">阅读须知</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <span class="tag"><i></i>热点聚合 · 每日更新节奏</span>
+        <h1>黑料吃瓜网红每日大赛入口</h1>
+        <p class="lead">这里是围绕网红热点与吃瓜话题的聚合首页。我们把散落在不同板块的内容按“谁在讨论、讨论什么、去哪里看”三个层次摆在一起，让找黑料吃瓜网红每日大赛入口的人少绕几步路。</p>
+        <div class="cta">
+          <a class="btn btn-main" href="#boards">进入吃瓜板块</a>
+          <a class="btn btn-ghost" href="#feed">查看热榜速览</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 320" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff5c8a"/><stop offset="1" stop-color="#ffb347"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#6fe3c1"/><stop offset="1" stop-color="#7f8cff"/>
+            </linearGradient>
+          </defs>
+          <rect x="30" y="26" width="360" height="268" rx="24" fill="#1d1830" stroke="#2e2745"/>
+          <rect x="58" y="56" width="140" height="14" rx="7" fill="url(#g1)" opacity=".9"/>
+          <rect x="58" y="84" width="220" height="9" rx="4.5" fill="#3a3355"/>
+          <rect x="58" y="102" width="180" height="9" rx="4.5" fill="#332c4c"/>
+          <g>
+            <rect x="58" y="136" width="96" height="72" rx="12" fill="#251f3c" stroke="#3a3355"/>
+            <circle cx="82" cy="160" r="9" fill="url(#g1)"/>
+            <rect x="70" y="180" width="72" height="7" rx="3.5" fill="#3a3355"/>
+            <rect x="70" y="192" width="52" height="7" rx="3.5" fill="#332c4c"/>
+          </g>
+          <g>
+            <rect x="166" y="136" width="96" height="72" rx="12" fill="#251f3c" stroke="#3a3355"/>
+            <circle cx="190" cy="160" r="9" fill="url(#g2)"/>
+            <rect x="178" y="180" width="72" height="7" rx="3.5" fill="#3a3355"/>
+            <rect x="178" y="192" width="52" height="7" rx="3.5" fill="#332c4c"/>
+          </g>
+          <g>
+            <rect x="274" y="136" width="96" height="72" rx="12" fill="#251f3c" stroke="#3a3355"/>
+            <circle cx="298" cy="160" r="9" fill="#ff5c8a" opacity=".7"/>
+            <rect x="286" y="180" width="72" height="7" rx="3.5" fill="#3a3355"/>
+            <rect x="286" y="192" width="52" height="7" rx="3.5" fill="#332c4c"/>
+          </g>
+          <rect x="58" y="228" width="200" height="10" rx="5" fill="#3a3355"/>
+          <rect x="58" y="248" width="140" height="10" rx="5" fill="#332c4c"/>
+          <circle cx="344" cy="252" r="18" fill="url(#g1)" opacity=".85"/>
+          <path d="M336 252l6 6 11-12" stroke="#1a0f1c" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="today" class="wrap">
+    <div class="sec-head">
+      <h2>今日看点：<span>一个首页能看懂的热点结构</span></h2>
+      <p>按内容性质分区，不按来源堆叠</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="k">网红动态</div>
+        <h3>当事人相关讨论</h3>
+        <p>围绕网红账号的公开动态、回应与争议点，把零散讨论归到同一话题下，方便按人物线索回看。</p>
+        <div class="foot">线索：公开动态与回应</div>
+      </article>
+      <article class="card">
+        <div class="k">吃瓜话题</div>
+        <h3>争议与反转节点</h3>
+        <p>一个热点常经历爆料、回应、再回应几个阶段。这里按时间顺序标注节点，避免把旧结论当新进展。</p>
+        <div class="foot">线索：时间顺序</div>
+      </article>
+      <article class="card">
+        <div class="k">每日大赛</div>
+        <h3>当日热度聚合</h3>
+        <p>把同一天里被反复提到的内容集中呈现，形成当日热点聚合页，便于一次浏览多个讨论方向。</p>
+        <div class="foot">线索：当日热度</div>
+      </article>
+      <article class="card">
+        <div class="k">入口导航</div>
+        <h3>分类访问路径</h3>
+        <p>黑料吃瓜网红每日大赛入口不只有一个方向，导航按板块拆分入口，读者可以先选类别再进入。</p>
+        <div class="foot">线索：板块分类</div>
+      </article>
+      <article class="card">
+        <div class="k">阅读提示</div>
+        <h3>辨别信息阶段</h3>
+        <p>爆料与定论不是一回事。页面在每条内容旁标注所处阶段，帮助读者判断信息成熟度。</p>
+        <div class="foot">线索：信息阶段</div>
+      </article>
+      <article class="card">
+        <div class="k">回看</div>
+        <h3>往期热点归档</h3>
+        <p>已降温但仍有参考价值的讨论，按日期归档，方便从旧话题追溯脉络，而不是只盯着当天。</p>
+        <div class="foot">线索：日期归档</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="boards" class="wrap">
+    <div class="sec-head">
+      <h2>吃瓜板块：<span>按关注对象分开看</span></h2>
+      <p>板块之间内容不重复</p>
+    </div>
+    <div class="feed">
+      <div>
+        <div class="list">
+          <div class="item">
+            <div class="num">01</div>
+            <div>
+              <h4>人物线索区</h4>
+              <p>以网红账号为主线，汇总公开可见的动态、回应与后续说明。同一人物的多条讨论合并展示，减少重复刷屏。</p>
+              <div class="meta">适合：想追某一位网红的完整脉络</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">02</div>
+            <div>
+              <h4>事件时间轴</h4>
+              <p>把爆料、回应、反转按发生顺序排列，标注每条信息出现的时间点，让“现在进展到哪一步”一目了然。</p>
+              <div class="meta">适合：怕看漏关键节点</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">03</div>
+            <div>
+              <h4>每日大赛聚合</h4>
+              <p>当天的讨论热度集中呈现，按提及量排序。热度不代表事实成立，只表示讨论密度，页面对此有明确标注。</p>
+              <div class="meta">适合：快速了解当天在聊什么</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">04</div>
+            <div>
+              <h4>入口索引</h4>
+              <p>黑料吃瓜网红每日大赛入口的分类索引区，按板块、按日期、按人物三种方式切换，找到对应内容区再进入。</p>
+              <div class="meta">适合：目标明确、只想找入口</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="side">
+        <div class="panel">
+          <h3>板块内搜索</h3>
+          <form class="search" role="search" onsubmit="return doSearch(event)">
+            <input id="q" type="search" placeholder="输入网红名或关键词" aria-label="搜索板块内容">
+            <button type="submit">查找</button>
+          </form>
+          <p class="hint" id="searchHint">输入关键词后，会在本页已列出的板块中匹配名称，帮助定位到对应栏目。</p>
+        </div>
+        <div class="panel">
+          <h3>当前栏目状态</h3>
+          <ul>
+            <li><b>人物线索区</b> · 按人物归并</li>
+            <li><b>事件时间轴</b> · 按时间排序</li>
+            <li><b>每日大赛聚合</b> · 按热度排序</li>
+            <li><b>入口索引</b> · 三种切换方式</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="feed" class="wrap">
+    <div class="sec-head">
+      <h2>热榜速览：<span>先看结论，再决定进哪个板块</span></h2>
+      <p>榜单反映讨论密度，不代表事实定性</p>
+    </div>
+    <div class="grid2">
+      <div class="prose">
+        <p>热榜速览只做一件事：把当天被提到最多的话题排成一行行短摘要。每条摘要包含讨论对象、当前阶段和一句话概括，读者扫一眼就知道值不值得点进去。</p>
+        <p><strong>排序依据</strong>是提及数量与更新频次，不是内容真假。热度高的条目可能仍处于爆料阶段，也可能已经有当事人回应，这两类在摘要里会分别标出。</p>
+        <p><strong>更新节奏</strong>跟随当日讨论变化，白天多为新增爆料，晚间多为回应与补充说明。页面不承诺固定时刻刷新，以内容实际变化为准。</p>
+      </div>
+      <div class="list">
+        <div class="item">
+          <div class="num">A</div>
+          <div>
+            <h4>账号动态类</h4>
+            <p>公开动态引发的讨论，多为一手信息，阶段标注为“动态”。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="num">B</div>
+          <div>
+            <h4>回应说明类</h4>
+            <p>当事人或相关方已作出回应，阶段标注为“回应”，需与爆料对照阅读。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="num">C</div>
+          <div>
+            <h4>待核实类</h4>
+            <p>仅有单一来源、暂无回应，阶段标注为“待核实”，阅读时保持保留。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="route" class="wrap">
+    <div class="sec-head">
+      <h2>入口路径：<span>三步找到想看的内容</span></h2>
+      <p>从首页到具体内容区</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>选类别</h3>
+        <p>先想清楚是追人物、看时间轴，还是只看当日聚合。类别决定后续路径，避免在无关内容里来回切换。</p>
+      </div>
+      <div class="step">
+        <h3>定板块</h3>
+        <p>在吃瓜板块里找到对应栏目，用搜索框输入网红名或关键词，快速跳到匹配的条目位置。</p>
+      </div>
+      <div class="step">
+        <h3>看阶段</h3>
+        <p>进入具体内容后先看阶段标注：动态、回应还是待核实。阶段不同，阅读时的判断尺度也不同。</p>
+      </div>
+    </div>
+
+    <div class="download-box">
+      <div>
+        <b>板块速查表</b>
+        把四类板块、三种阶段标注与入口切换方式整理成一页速查，方便随时对照。
+      </div>
+      <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;">下载</a>
+    </div>
+  </section>
+
+  <section id="notice" class="wrap">
+    <div class="sec-head">
+      <h2>阅读须知：<span>把“讨论”和“事实”分开</span></h2>
+      <p>页面只做聚合与索引</p>
+    </div>
+    <div class="prose">
+      <p>黑料吃瓜网红每日大赛入口是一个内容聚合与入口索引入口，本身不生产爆料，也不对讨论内容作真假定性。页面所做的，是把公开可见的讨论按人物、时间、热度整理成可浏览的结构。</p>
+      <p>阅读时建议留意三点：一是来源是否可追溯，二是当事人是否已有回应，三是信息处于哪个阶段。只凭单一来源的爆料，在页面上会被标注为“待核实”，这类内容应谨慎对待。</p>
+      <p>如果某个话题已经降温，可以到往期归档里继续回看，而不必停留在当日热榜。热点会过去，脉络留下来——这也是把黑料吃瓜网红每日大赛入口做成分类索引而不是单一列表的原因。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="brand">
+        <b>黑料吃瓜网红每日大赛入口</b>
+        网红热点与吃瓜话题的聚合首页，提供人物线索、事件时间轴、每日热度聚合与分类入口索引。内容按阶段标注，讨论与事实分开呈现。
+      </div>
+      <div class="foot-links">
+        <a href="#today">今日看点</a>
+        <a href="#boards">吃瓜板块</a>
+        <a href="#feed">热榜速览</a>
+        <a href="#route">入口路径</a>
+        <a href="#notice">阅读须知</a>
+      </div>
+    </div>
+    <p class="copy">页面内容为公开讨论的聚合与索引，不对未经证实的说法作定性。黑料吃瓜网红每日大赛入口持续按板块整理当日可见内容。</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('mainnav');
+    if(btn && nav){
+      btn.addEventListener('click', function(){
+        var open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.addEventListener('click', function(e){
+        if(e.target.tagName === 'A'){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    }
+  })();
+
+  function doSearch(e){
+    e.preventDefault();
+    var q = (document.getElementById('q').value || '').trim();
+    var hint = document.getElementById('searchHint');
+    var boards = [
+      {name:'人物线索区', id:'boards'},
+      {name:'事件时间轴', id:'boards'},
+      {name:'每日大赛聚合', id:'boards'},
+      {name:'入口索引', id:'boards'},
+      {name:'热榜速览', id:'feed'},
+      {name:'入口路径', id:'route'},
+      {name:'阅读须知', id:'notice'}
+    ];
+    if(!q){
+      hint.textContent = '请输入关键词，例如网红名称或“时间轴”。';
+      return false;
+    }
+    var hit = boards.filter(function(b){ return b.name.indexOf(q) > -1; });
+    if(hit.length){
+      hint.textContent = '匹配到：' + hit.map(function(h){return h.name;}).join('、') + '，已为你定位到对应板块。';
+      document.getElementById(hit[0].id).scrollIntoView({behavior:'smooth', block:'start'});
+    }else{
+      hint.textContent = '本页板块中暂未匹配到“' + q + '”，可改用人物线索区或事件时间轴浏览。';
+    }
+    return false;
+  }
+</script>
+
+</body>
+</html>
